@@ -2,7 +2,6 @@
 #![no_main]
 #![feature(panic_info_message, int_roundings)]
 
-use core::panic::PanicInfo;
 use core::arch::asm;
 
 
@@ -10,7 +9,6 @@ pub mod assembly;
 pub mod uart;
 
 pub mod page;
-use page::alloc;
 
 use crate::uart::UART_BASE_ADDR;
 

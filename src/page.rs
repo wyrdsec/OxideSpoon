@@ -138,7 +138,6 @@ pub fn print_page_allocations() {
 					beg, end, alloc_beg, alloc_end
 		);
 		println!("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		let mut num = 0;
 		while beg < end {
 			if (*beg).is_taken() {
 				let start = beg as usize;
@@ -147,7 +146,6 @@ pub fn print_page_allocations() {
 								* PAGE_SIZE;
 				print!("0x{:x} => ", memaddr);
 				loop {
-					num += 1;
 					if (*beg).is_last() {
 						let end = beg as usize;
 						let memaddr = ALLOC_START
